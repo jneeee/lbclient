@@ -12,7 +12,7 @@ import time
 import threading
 
 
-class TokenDueqe:
+class TokenDeque:
     def __init__(self, token_list):
         self.deque = collections.deque(token_list)
         self.helpset = set(token_list)
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     ipvx = socket.AF_INET if '.' in domain_str else socket.AF_INET6
     
     iplist = get_dns_ip(domain_str)
-    token_queue = TokenDueqe(iplist)
+    token_queue = TokenDeque(iplist)
     res = {}
     for ip_str in iplist:
         res[ip_str] = {'success': 0, 'fail': 0}
